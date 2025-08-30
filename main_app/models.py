@@ -12,3 +12,4 @@ class Console(models.Model):
         
     def __str__(self):
             return f'name:{self.name}, is it worth playing? : {self.is_worth_playing}'
+        # check if this stuff works in pg admin - test comment for a commit
