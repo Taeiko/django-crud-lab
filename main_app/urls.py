@@ -1,8 +1,9 @@
 from django.urls import path, include 
 from django.contrib import admin
-
+from .models import Console
+from . import views
+# these are the actual urls. the name is a reference that takes us to that url we just made.
 urlpatterns = [
-      path('admin/', admin.site.urls),
-    path('', include('name-of-your-application.urls')),
-    path('consoles/list', views.all_consoles, name='console-list.html')
+      path('consoles/list/', views.all_consoles, name='console_list'),
+      path('consoles/<int:pk>/console_details/', views.console_details, name='console_details')
 ]
