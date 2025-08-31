@@ -6,7 +6,7 @@ class Console(models.Model):
     name = models.CharField(max_length=80, unique=False)
     release_year = models.IntegerField()
     is_worth_playing= models.BooleanField(default=False)
-    created_at=models.DateTimeField(auto_now_add=True)
+    
     class Meta:
         db_table= 'consoles'
         

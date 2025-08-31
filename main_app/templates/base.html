@@ -10,7 +10,7 @@
     <nav> 
         {% comment %} this grabs the name from the urls.py {% endcomment %}
         <a href="{%url 'console_list'%}">show list</a>
-        <a href="{%url 'console_details'%}">console details</a>
+        {% comment %} <a href="{%url 'console_details'%}">console details</a> {% endcomment %}
     </nav>
     
     {% block body%}

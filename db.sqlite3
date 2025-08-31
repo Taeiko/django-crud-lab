@@ -1,0 +1,9 @@
+SELECT *  FROM consoles;
+
+INSERT INTO consoles(id,name,release_year,is_worth_playing)
+VALUES (1,'Sega Genesis', 1989, true);
+INSERT INTO consoles(id,name,release_year,is_worth_playing)
+VALUES(2, 'Super Nintendo entertainment system - SNES', 1991,true);
+INSERT INTO consoles (id,name,release_year,is_worth_playing)
+VALUES (3,'Nintendo Wii', 2006, true);
+
