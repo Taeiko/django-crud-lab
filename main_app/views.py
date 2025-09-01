@@ -38,3 +38,10 @@ class ConsoleUpdateView(UpdateView):
     
     def get_success_url(self):
         return reverse ('console_details', kwargs={'pk':self.object.pk})
+
+
+
+class CosnoleDeleteView(DeleteView):
+    model = Console
+    template_name = 'game-consoles/console_confirm_delete.html'
+    success_url = reverse_lazy("console_list")

@@ -7,5 +7,6 @@ urlpatterns = [
       path('consoles/list/', views.all_consoles, name='console_list'),
       path('consoles/<int:pk>/details/', views.console_details, name='console_details'),
       path('consoles/create/', views.console_create, name='create'),
-      path('consoles/<int:pk>/edit', views.ConsoleUpdateView.as_view(), name='console_update')
+      path('consoles/<int:pk>/edit', views.ConsoleUpdateView.as_view(), name='console_update'),
+      path('consoles/<int:pk>/delete', views.CosnoleDeleteView.as_view(), name='console_delete'),
 ]

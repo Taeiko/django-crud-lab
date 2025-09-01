@@ -5,6 +5,9 @@
 <h2>Console: {{console.name}}</h2>
 <h3>Release year: {{console.release_year}}</h3>
 <h4>IS it worth playing?: {{console.is_worth_playing}}</h4>
-<p><a href="{%url 'console_update' console.pk %}">Edit</a> |</p>
-
+<p><a href="{%url 'console_update' console.pk %}">Edit</a>
+<form action="{%url 'console_delete' console.pk%}" method="post">
+    {%csrf_token%}
+    <button>delete</button>
+</form>
 {% endblock  %}
