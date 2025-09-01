@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {%block body%}
-<h1>Console form</h1>
+<h1>{{form.instance.pk|yesno:"Update,Create"}}Console form</h1>
 <form method='post'>
     {% csrf_token %}
     {{form.as_p}}

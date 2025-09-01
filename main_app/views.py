@@ -22,3 +22,19 @@ def console_create(request):
     else:
         form = ConsoleForm()
     return render (request, 'game-consoles/console_form.html',{"form" : form})
+
+
+from django.urls import reverse_lazy, reverse 
+from django.views.generic import UpdateView, DeleteView
+from django.views import View
+from .models import Console
+from .forms import ConsoleForm
+
+
+class ConsoleUpdateView(UpdateView):
+    model = Console 
+    form_class = ConsoleForm
+    template_name = 'game-consoles/console_form.html'
+    
+    def get_success_url(self):
+        return reverse ('console_details', kwargs={'pk':self.object.pk})
