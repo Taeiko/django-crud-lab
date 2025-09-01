@@ -4,6 +4,6 @@
 {% block body%}
 <h1>Console list</h1>
 {%for console in consoles%}
-<a href="{%url 'console_list'%}">{{console.name}}</a>
+<a href="{%url 'console_details' pk=console.pk %}">{{console.name}}</a>
 {% endfor %}
 {% endblock %}

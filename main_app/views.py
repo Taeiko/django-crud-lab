@@ -8,8 +8,8 @@ def all_consoles(request):
     consoles = Console.objects.all()
     return render (request, 'game-consoles/console_list.html',{'consoles': consoles})
 
-def console_details(request):
-    console = Console.objects.get()
+def console_details(request, pk):
+    console = Console.objects.get(pk=pk)
     return render(request, 'game-consoles/console_details.html',{'console':console} )
 
 
@@ -17,8 +17,8 @@ def console_create(request):
     if request.method=="POST":
         form = ConsoleForm(request.POST)
         if form.is_valid():
-            console = form.save
-        return redirect('conosole_details', pk=console.pk)
+            console = form.save()
+        return redirect('console_details', pk=console.pk)
     else:
         form = ConsoleForm()
     return render (request, 'game-consoles/console_form.html',{"form" : form})
